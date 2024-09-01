@@ -1,0 +1,33 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+client_id = "55d0b8d1e4efdc5a45f895175c3db495"
+name = "qrcode"
+handle = "qrcode-125"
+application_url = "https://careers-manufacturing-printable-medicare.trycloudflare.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+dev_store_url = "xn-cckaz0db8a3d7f9c0e6846enh4ahj1d.myshopify.com"
+include_config_on_deploy = true
+
+[access_scopes]
+# Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
+scopes = "read_products,write_products"
+
+[auth]
+redirect_urls = [
+  "https://careers-manufacturing-printable-medicare.trycloudflare.com/auth/callback",
+  "https://careers-manufacturing-printable-medicare.trycloudflare.com/auth/shopify/callback",
+  "https://careers-manufacturing-printable-medicare.trycloudflare.com/api/auth/callback"
+]
+
+[webhooks]
+api_version = "2024-07"
+
+  [[webhooks.subscriptions]]
+  topics = [ "app/uninstalled" ]
+  uri = "/webhooks"
+
+[pos]
+embedded = false
